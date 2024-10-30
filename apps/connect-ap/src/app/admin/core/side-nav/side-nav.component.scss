@@ -1,0 +1,29 @@
+.sidebar {
+  top: 56px; /* Adjust based on the height of the header */
+  overflow: auto;
+  max-height: calc(100vh - 56px);
+}
+
+.text-color {
+  color: var(--bs-body-color) !important;
+}
+::ng-deep [data-bs-theme='dark'] {
+  .nav-item {
+    &:hover {
+      background: rgba(26, 37, 50, 0.228);
+    }
+    &.active-item {
+      background: rgba(26, 37, 51, 0.821);
+    }
+  }
+}
+::ng-deep [data-bs-theme='light'] {
+  .nav-item {
+    &:hover {
+      background: rgba(38, 87, 151, 0.1);
+    }
+    &.active-item {
+      background: rgba(38, 88, 153, 0.21);
+    }
+  }
+}

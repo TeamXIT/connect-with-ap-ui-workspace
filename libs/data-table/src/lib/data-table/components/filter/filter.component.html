@@ -1,0 +1,24 @@
+@if (configuration().sequenceOptions?.enableSequenceNo) {
+  <td></td>
+}
+<ng-container [formGroup]="formGroup">
+  @for (columnName of configuration() | get: 'columns' || []; track $index) {
+    <td>
+      @if (
+        configuration()
+          | get: 'filterOptions'
+          | get: 'columns'
+          | includes: columnName
+      ) {
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          [formControlName]="columnName"
+        />
+      }
+    </td>
+  }
+</ng-container>
+@if ((configuration() | get: 'columns' || []).length) {
+  <td></td>
+}

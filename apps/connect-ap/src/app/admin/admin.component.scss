@@ -1,0 +1,25 @@
+main {
+  // padding-top: 60px; /* Space for the fixed header */
+  // height: 100vh;
+  overflow-y: auto;
+  top: 56px; /* Adjust based on the height of the header */
+  max-height: calc(100vh - 56px);
+}
+
+div[app-side-nav] {
+  width: 16%;
+  height: 100vh;
+  padding: 0;
+}
+
+::ng-deep [data-bs-theme='dark'] {
+  div[app-side-nav] {
+    // background-color: rgb(1 21 47 / 20%);
+    background-color: rgba(10, 12, 12, 0.2);
+  }
+}
+::ng-deep [data-bs-theme='light'] {
+  div[app-side-nav] {
+    background-color: hsla(214, 53%, 53%, 0.2);
+  }
+}

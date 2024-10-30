@@ -1,0 +1,25 @@
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+.sidebar {
+  position: fixed;
+  top: 56px; /* Adjust based on header height */
+  bottom: 0;
+  width: 240px;
+  padding-top: 1rem;
+  overflow-y: auto;
+  //   background-color: #f8f9fa;
+}
+.content {
+  margin-top: 56px; /* Adjust based on header height */
+  margin-left: 240px; /* Width of sidebar */
+  padding: 2rem;
+}
+
+body {
+  background-color: #041527 !important;
+}

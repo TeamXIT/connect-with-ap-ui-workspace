@@ -1,0 +1,8 @@
+@if (data().length) {
+  @defer {
+    <x-data-table
+      [configuration]="configuration"
+      [data]="data()"
+    />
+  }
+}

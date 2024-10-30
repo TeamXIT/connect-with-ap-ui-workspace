@@ -1,0 +1,22 @@
+<nav
+  id="sidebar"
+  class="col-md-2 d-md-block sidebar position-fixed"
+>
+  <!-- <pre>{{ route.url|async|json}}</pre> -->
+  <ul class="nav flex-column pe-2 mt-2">
+    @for (item of sidenavItems; track $index) {
+      <li
+        class="nav-item fw-medium ps-2 "
+        [class.active-item]="item.link | includes: activeItem()"
+      >
+        <a
+          class="nav-link text-color"
+          [routerLink]="item.link"
+          (click)="onClick(item.link)"
+        >
+          {{ item.title }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>

@@ -1,0 +1,24 @@
+<tr>
+  @if (configuration().sequenceOptions?.enableSequenceNo) {
+    <th style="width: fit-content">
+      {{ configuration().sequenceOptions?.sequenceHeader || '' }}
+    </th>
+  }
+  @for (columnName of configuration() | get: 'columns' || []; track $index) {
+    <th
+      [width]="'300px'"
+      scope="col"
+      x-table-sort
+      [column]="columnName"
+      [configuration]="configuration()"
+    ></th>
+  }
+  <th>Actions</th>
+</tr>
+
+@if (configuration() | get: 'filterOptions' | get: 'columns') {
+  <tr
+    x-table-filter
+    [configuration]="configuration()"
+  ></tr>
+}

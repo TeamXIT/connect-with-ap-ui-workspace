@@ -1,0 +1,24 @@
+<span
+  [class.asc]="
+    (sortManager.sortOptions$ | async)?.column === column() &&
+    (sortManager.sortOptions$ | async)?.direction === 'asc'
+  "
+  [class.desc]="
+    (sortManager.sortOptions$ | async)?.column === column() &&
+    (sortManager.sortOptions$ | async)?.direction === 'desc'
+  "
+  class="text-nowrap"
+  (click)="onClick()"
+>
+  {{
+    configuration() | get: 'headerOptions' | get: column() | get: 'displayProp'
+  }}
+  @if ((sortManager.sortOptions$ | async)?.column === column()) {
+    @if ((sortManager.sortOptions$ | async)?.direction === 'asc') {
+      <i class="bi bi-arrow-down"></i>
+    }
+    @if ((sortManager.sortOptions$ | async)?.direction === 'desc') {
+      <i class="bi bi-arrow-up"></i>
+    }
+  }
+</span>

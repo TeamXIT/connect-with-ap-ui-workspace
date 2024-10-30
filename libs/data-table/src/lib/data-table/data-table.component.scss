@@ -1,0 +1,12 @@
+.table-wrapper {
+  max-height: 70vh;
+  overflow: auto;
+  thead {
+    top: 0;
+    position: sticky;
+    tr[x-table-filter] {
+      position: relative;
+      top: -0.5px;
+    }
+  }
+}

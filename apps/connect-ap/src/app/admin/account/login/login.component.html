@@ -1,0 +1,45 @@
+<div class="row d-flex justify-content-center align-items-center mt-5 pt-5">
+  <div class="col-4 card p-3 pb-3">
+    <form
+      [formGroup]="formGroup"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-group">
+        <label
+          for=""
+          class="form-label"
+          >Name</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="userName"
+          placeholder="Enter name"
+        />
+      </div>
+
+      <div class="form-group mt-3">
+        <label
+          for=""
+          class="form-label"
+          >Password</label
+        >
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter password"
+        />
+      </div>
+
+      <div class="form-group mt-4">
+        <button
+          type="submit"
+          class="btn btn-primary w-100"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
